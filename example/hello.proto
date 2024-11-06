@@ -1,0 +1,15 @@
+syntax = "proto3";
+package hello;
+option cc_generic_services = true;
+
+message req{
+  optional bytes name = 1;
+}
+
+message res{
+  optional bytes message = 1;
+}
+
+service HelloService{
+  rpc hello(req) returns(res);
+}
